@@ -1,10 +1,15 @@
 package xalan2jtaglet;
 
-import com.sun.javadoc.Tag;
-import com.sun.tools.doclets.Taglet;
-
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import javax.lang.model.element.Element;
+import javax.swing.text.html.HTML.Tag;
+
+import com.sun.source.doctree.DocTree;
+
+import jdk.javadoc.doclet.*;
 /**
  * Taglet for Xalan-Java documentation, giving us a standard way to
  * indicate when classes are public only because they are shared
@@ -24,32 +29,26 @@ import java.util.Map;
 public class XSLUsageTag implements Taglet {
   private static final String HEADER = "Usage:";
 
-  @Override
   public boolean inConstructor() {
     return true;
   }
 
-  @Override
   public boolean inField() {
     return true;
   }
 
-  @Override
   public boolean inMethod() {
     return true;
   }
 
-  @Override
   public boolean inOverview() {
     return true;
   }
 
-  @Override
   public boolean inPackage() {
     return true;
   }
 
-  @Override
   public boolean inType() {
     return true;
   }
@@ -64,12 +63,10 @@ public class XSLUsageTag implements Taglet {
     return "xsl.usage";
   }
 
-  @Override
   public String toString(Tag tag) {
     return "\n<DT><b>Usage:</b><DD>" + XSLUsage.getHTML(tag) + "</DD>\n";
   }
 
-  @Override
   public String toString(Tag[] tags) {
     if (tags == null || tags.length == 0)
       return "";
@@ -89,4 +86,16 @@ public class XSLUsageTag implements Taglet {
       tagletMap.remove(tag.getName());
     tagletMap.put(tag.getName(), tag);
   }
+
+@Override
+public Set<Location> getAllowedLocations() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public String toString(List<? extends DocTree> tags, Element element) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

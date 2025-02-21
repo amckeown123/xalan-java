@@ -9,6 +9,8 @@
   </parent>
 
   <artifactId>xalan2jtaglet_jdk9</artifactId>
+  <packaging>pom</packaging>
+
   <name>@xsl.usage taglet JDK9+</name>
   <description>
     Implementation of the @xsl.usage taglet, used in the Xalan package's javadoc

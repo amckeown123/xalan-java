@@ -25,14 +25,17 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-import org.apache.xerces.parsers.SAXParser;
+import org.xml.sax.*;
+import org.xml.sax.helpers.*;
+
 import org.apache.xml.res.XMLErrorResources;
 import org.apache.xml.res.XMLMessages;
-
+import org.apache.xml.serialize.XMLSerializer;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import org.apache.xerces.parsers.*;
 
 /** <p>IncrementalSAXSource_Xerces takes advantage of the fact that Xerces1
  * incremental mode is already a coroutine of sorts, and just wraps our
@@ -397,8 +400,8 @@ public class IncrementalSAXSource_Xerces
       createIncrementalSAXSource();
 
     // Use a serializer as our sample output
-    org.apache.xml.serialize.XMLSerializer trace;
-    trace=new org.apache.xml.serialize.XMLSerializer(System.out,null);
+    XMLSerializer trace;
+    trace=new XMLSerializer(System.out,null);
     parser.setContentHandler(trace);
     parser.setLexicalHandler(trace);
 

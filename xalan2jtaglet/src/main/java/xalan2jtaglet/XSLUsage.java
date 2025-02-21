@@ -1,6 +1,6 @@
 package xalan2jtaglet;
 
-import com.sun.javadoc.Tag;
+import javax.swing.text.html.HTML.Tag;
 
 /**
  * Taglet for Xalan-Java documentation, giving us a standard way to
@@ -43,7 +43,7 @@ public class XSLUsage {
 
   private static int getKey(Tag usageTag) {
     for (int i = 0; i < names.length; ++i) {
-      if (names[i].equals(usageTag.text()))
+      if (names[i].equals(usageTag.toString()))
         return i;
     }
     return -1;

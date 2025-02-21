@@ -12,6 +12,8 @@
 
   <artifactId>xsltcservlet</artifactId>
   <name>Apache Xalan-Java Compiled Servlet Sample</name>
+  <packaging>pom</packaging>
+
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -30,20 +32,19 @@
       <groupId>xalan</groupId>
       <artifactId>xalan</artifactId>
     </dependency>
-    <!-- For javadoc generation only, hence 'provided' scope -->
     <dependency>
       <groupId>xalan</groupId>
       <artifactId>${xalan.taglet.artifactId}</artifactId>
+    <version>2.7.3</version>
       <scope>provided</scope>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version> <!-- jakata servlet is at 6.0 -->
-      <scope>provided</scope>
-    </dependency>
+<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.1.0</version>
+    <scope>provided</scope>
+</dependency>
 
     <!-- https://mvnrepository.com/artifact/javax.ejb/ejb-api -->
     <dependency>
@@ -52,22 +53,25 @@
       <version>3.0</version>
       <scope>provided</scope>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
     <dependency>
       <groupId>xerces</groupId>
       <artifactId>xercesImpl</artifactId>
-      <version>2.12.2</version>
       <scope>provided</scope>
-    </dependency>
-
-    <!-- https://github.com/dev-aspectj/brazil -->
-    <dependency>
-      <groupId>dev.aspectj</groupId>
-      <artifactId>sunlabs.brazil</artifactId>
-      <version>2.3.1</version>
-    </dependency>
-
+     <version>2.12.2</version>
+    <exclusions>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+        </exclusion>
+     </exclusions>
+   </dependency>
+<!-- https://mvnrepository.com/artifact/dev.aspectj/sunlabs.brazil -->
+<dependency>
+    <groupId>dev.aspectj</groupId>
+    <artifactId>sunlabs.brazil</artifactId>
+    <version>2.3.1</version>
+</dependency>
     <!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.rmi/jboss-rmi-api_1.0_spec -->
     <dependency>
       <groupId>org.jboss.spec.javax.rmi</groupId>

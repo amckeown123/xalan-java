@@ -22,7 +22,7 @@
     </Order>
 <Order Name="GAVIIFORMES">
         <Family Name="GAVIIDAE">
-            <Speciesx Scientific_Name="Gavia stellata">Red-throated Loon.</Speciesx>
+            <Species Scientific_Name="Gavia stellata">Red-throated Loon.</Species>
             <Species Scientific_Name="Gavia arctica">Arctic Loon.</Species>
             <Species Scientific_Name="Gavia pacifica">Pacific Loon.</Species>
             <Species Scientific_Name="Gavia immer">Common Loon.</Species>

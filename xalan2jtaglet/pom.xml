@@ -9,6 +9,7 @@
   </parent>
 
   <artifactId>xalan2jtaglet</artifactId>
+<packaging>pom</packaging>
   <name>@xsl.usage taglet JDK 8</name>
   <description>
     Implementation of the @xsl.usage taglet, used in the Xalan package's javadoc
@@ -17,9 +18,6 @@
   </description>
 
   <dependencies>
-    <!-- Automatically depends on tools.jar up to JDK 8, but not on JDK 9+.
-         This way, we do not need to manually define profiles for this task.
-    -->
     <dependency>
       <groupId>com.github.olivergondza</groupId>
       <artifactId>maven-jdk-tools-wrapper</artifactId>
